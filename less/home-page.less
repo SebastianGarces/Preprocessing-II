@@ -1,4 +1,8 @@
 .home {
+    @media @mobile {
+        width: 100%;
+    }
+
     .top-content {
         img {
             padding-bottom: 30px;
@@ -29,6 +33,20 @@
 
             img {
                 border-radius: 10px;
+            }
+        }
+        @media @mobile {
+            .flex(column, center, center);
+
+            .text-content,
+            .img-content {
+                padding: 0 2em;
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .img-content {
+                .flex(row, center, center);
             }
         }
     }

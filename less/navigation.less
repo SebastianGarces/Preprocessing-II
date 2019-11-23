@@ -1,28 +1,47 @@
 // Navigation Styles here
 header {
     width: 100%;
-
+    padding: 0 10%;
+    .flex(row, space-between, center);
+    & > a {
+        font-family: "Indie Flower", cursive;
+        font-size: 4rem;
+        text-decoration: none;
+        color: @shark;
+    }
     nav {
-        max-width: 800px;
+        width: 100%;
         .flex(row, flex-end, center);
         padding: 2em 0;
-        margin: 0 auto;
 
         a {
-            margin-left: 5em;
-            font-size: 1.6rem;
+            font-size: 2.3rem;
             text-decoration: none;
             color: @shark;
             font-weight: 500;
-        }
-
-        a:first-child {
-            margin-right: auto;
-            margin-left: 0;
-            font-family: "Indie Flower", cursive;
-            font-size: 4rem;
+            margin-left: 3em;
         }
     }
 
     border-bottom: 2px dashed @silver;
+
+    /*MOBILE MEDIA QUERY*/
+
+    @media @mobile {
+        .flex(column, center, center);
+        header > a {
+            margin: 1rem;
+        }
+        nav {
+            width: 500px;
+            padding: 0 2em;
+            margin: 1em 0;
+            .flex(row, space-between, center);
+
+            a {
+                font-size: 1.8rem;
+                margin: 0;
+            }
+        }
+    }
 }
