@@ -3,6 +3,12 @@
         width: 100%;
     }
 
+    // .container {
+    //     @media @mobile {
+    //         padding: 0 1rem;
+    //     }
+    // }
+
     .top-content {
         img {
             padding-bottom: 30px;
@@ -24,15 +30,14 @@
 
         .text-content {
             width: 48%;
-            padding-right: 1%;
         }
 
         .img-content {
             width: 48%;
-            padding-left: 1%;
 
             img {
                 border-radius: 10px;
+                margin-top: 5px;
             }
         }
         @media @mobile {
@@ -40,9 +45,12 @@
 
             .text-content,
             .img-content {
-                padding: 0 2em;
                 width: 100%;
                 margin: 0 auto;
+
+                img {
+                    width: 100%;
+                }
             }
 
             .img-content {
@@ -56,13 +64,15 @@
         border-bottom: 2px dashed @navigation-border;
 
         .text-content {
-            padding-left: 1%;
             padding-right: 0;
         }
 
         .img-content {
-            padding-right: 1%;
             padding-left: 0;
+        }
+
+        @media @mobile {
+            flex-direction: column-reverse;
         }
     }
 
@@ -73,6 +83,10 @@
         img {
             border-radius: 10px;
         }
+
+        @media @mobile {
+            width: 100%;
+        }
     }
 
     .content-pick {
@@ -81,13 +95,57 @@
         display: flex;
         justify-content: space-between;
 
+        @media @mobile {
+            .flex(column, center, center);
+        }
+
         .destination {
             width: 30%;
             margin-bottom: 30px;
 
+            @media @mobile {
+                width: 80%;
+            }
+
             .btn {
                 .button;
+
+                @media @mobile {
+                    width: 100%;
+                }
+            }
+
+            .btn:hover {
+                .animate(shake, 700ms, ease);
             }
         }
     }
 } // home
+
+@keyframes shake {
+    0% {
+        transform: translateX(-3px);
+    }
+
+    15% {
+        transform: translateX(3px);
+    }
+    30% {
+        transform: translateX(-3px);
+    }
+    45% {
+        transform: translateX(3px);
+    }
+    60% {
+        transform: translateX(-3px);
+    }
+    75% {
+        transform: translateX(3px);
+    }
+    90% {
+        transform: translateX(-3px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}

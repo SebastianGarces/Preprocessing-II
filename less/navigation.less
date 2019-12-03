@@ -8,6 +8,9 @@ header {
         font-size: 4rem;
         text-decoration: none;
         color: @shark;
+        @media @mobile {
+            margin-top: 1rem;
+        }
     }
     nav {
         width: 100%;
@@ -34,7 +37,7 @@ header {
         }
         nav {
             width: 500px;
-            padding: 0 2em;
+            padding: 0 5em;
             margin: 1em 0;
             .flex(row, space-between, center);
 
